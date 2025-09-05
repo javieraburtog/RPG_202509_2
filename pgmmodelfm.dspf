@@ -1,0 +1,127 @@
+     A*%%TS  SD  20160514  083129  JAVIER      REL-V7R1M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A          R MARCO
+     A*%%TS  SD  20160425  164428  JAVIER      REL-V7R1M0  5770-WDS
+     A                                  1  2'Informatica'
+     A                                  2 72TIME
+     A                                  3  2'                                  -
+     A                                                                         -
+     A                                               '
+     A                                      DSPATR(HI)
+     A                                      DSPATR(UL)
+     A                                 23  2'                                  -
+     A                                                                         -
+     A                                               '
+     A                                      DSPATR(HI)
+     A                                      DSPATR(UL)
+     A            FEC            8Y 0O  1 70EDTWRD('  /  /    ')
+     A                                  1 63'Fecha:'
+     A                                  2 63'Hora :'
+     A                                 24 42'Roll Dn=Abajo'
+     A                                      DSPATR(HI)
+     A                                 24 61'Roll Up=Arriba'
+     A                                      DSPATR(HI)
+     A                                 24 10'F3=Salir'
+     A                                      DSPATR(HI)
+     A                                 24 24'F12=Anterior'
+     A                                      DSPATR(HI)
+     A                                  1 26'Modulo  de  Inventarios'
+     A                                      DSPATR(HI)
+     A                                  2  2'Prog: INVMODELO'
+     A                                  2 20'Titulo de del Programa            -
+     A                                            '
+     A          R PARAME
+     A*%%TS  SD  20160425  164428  JAVIER      REL-V7R1M0  5770-WDS
+     A                                      OVERLAY
+     A                                      CLRL(*NO)
+     A            NOMCIA        23A  O  4  7
+     A            NOMSUC        15A  O  4 38
+     A                                  4  2'Cia:'
+     A                                      DSPATR(HI)
+     A                                      DSPATR(RI)
+     A            NOMBOD        15A  O  4 65
+     A                                  4 33'Suc:'
+     A                                      DSPATR(HI)
+     A                                      DSPATR(RI)
+     A                                  4 55'Bod:'
+     A                                      DSPATR(HI)
+     A                                      DSPATR(RI)
+     A          R MENSAJ
+     A*%%TS  SD  20130305  081046  JAVIER      REL-V7R1M0  5770-WDS
+     A                                      WINDOW(10 9 3 60)
+     A            XMEN          60   O  2  1DSPATR(RI)
+     A                                      DSPATR(HI)
+     A          R ENCABE
+     A*%%TS  SD  20160511  144506  JAVIER      REL-V7R1M0  5770-WDS
+     A                                      WINDOW(5 2 4 74 *NOMSGLIN)
+     A                                      CA03
+     A                                      CA04
+     A                                      CA12
+     A  99                                  ALARM
+     A            MSG           65A  O  4  4
+     A  99                                  DSPATR(HI)
+     A  99                                  DSPATR(RI)
+     A N99                                  DSPATR(ND)
+     A                                      COLOR(YLW)
+     A                                  1  1'No. Articulo:'
+     A                                      DSPATR(HI)
+     A                                      DSPATR(RI)
+     A            PARTE         17A  B  1 15
+     A  35                                  DSPATR(RI)
+     A  35                                  COLOR(RED)
+     A            XIDESCI       42A  O  1 33
+     A                                  2  1'Codigo:'
+     A            XCODIGO       10   B  2  9
+     A          R PREGUNTA1
+     A*%%TS  SD  20131008  203922  JAVIER      REL-V7R1M0  5770-WDS
+     A                                      WINDOW(20 5 1 68 *NOMSGLIN)
+     A                                      CA03
+     A                                  1  1'      Desea confirmar la informaci-
+     A                                      on digitada      (S/N): ? '
+     A                                      DSPATR(HI)
+     A                                      DSPATR(RI)
+     A            XR1            1A  B  1 62VALUES('S' 'N')
+     A          R SUBDET                    SFL
+     A*%%TS  SD  20160514  083129  JAVIER      REL-V7R1M0  5770-WDS
+     A            FILA           3S 0H
+     A            COLU           3S 0H
+     A            SCFACTURA      7Y 0B  2  1EDTCDE(Z)
+     A  77                                  DSPATR(PR)
+     A            SCCANTIDA      7Y 0B  2  9EDTCDE(Z)
+     A  62                                  DSPATR(PC)
+     A  62                                  DSPATR(RI)
+     A  62                                  COLOR(RED)
+     A            SCPARTE       17A  B  2 17
+     A  63                                  DSPATR(PC)
+     A  63                                  DSPATR(RI)
+     A  63                                  COLOR(RED)
+     A            FLD001         2A  B  3 51
+     A          R SUBDE1                    SFLCTL(SUBDET)
+     A*%%TS  SD  20160511  150725  JAVIER      REL-V7R1M0  5770-WDS
+     A                                      SFLSIZ(9500)
+     A                                      SFLPAG(0006)
+     A                                      WINDOW(8 2 13 74 *NOMSGLIN)
+     A                                      CA03
+     A                                      CA04
+     A                                      CA12
+     A                                      CA06
+     A                                      CA07
+     A  99                                  ALARM
+     A                                      OVERLAY
+     A                                      SFLCSRRRN(&X01)
+     A N30                                  SFLDSP
+     A N30                                  SFLDSPCTL
+     A  30                                  SFLCLR
+     A N11                                  SFLDROP(CF02)
+     A  11                                  SFLFOLD(CF02)
+     A* 99                                  SFLMSG('Hay Errores en Detalle de L-
+     A*                                     iquidacion')
+     A                                  1  1' Factur Canti    Codigo           -
+     A                                                                         -
+     A                                           '
+     A                                      DSPATR(HI)
+     A                                      DSPATR(RI)
+     A            SEC5           4S 0H      SFLRCDNBR
+     A            X01            5S 0H

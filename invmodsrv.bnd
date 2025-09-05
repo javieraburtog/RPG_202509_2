@@ -1,0 +1,8 @@
+/* Funciones de Programa Modelo  */
+             STRPGMEXP  PGMLVL(*CURRENT)
+
+             EXPORT     SYMBOL(EJE_TABLA01_INSERTAR_CODIGO_USUARIO)
+             EXPORT     SYMBOL(EJE_TABLA01_ELIMINAR_CODIGO_USUARIO)
+
+  ENDPGMEXP
+
