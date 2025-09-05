@@ -18,6 +18,12 @@
      D Estado                         2a
      D*
 
+      //declare variable for prices and costs using free format
+
+      dcl-s Price         packed(7:2);
+      dcl-s Cost          packed(7:2);
+
+
        Dsply ('Cod_Compania') ' ' Cod_Compania;
        Dsply ('Cod_Sucursal') ' ' Cod_Sucursal;
        Dsply ('Cod_BODEGA ')  ' ' Cod_Bodega;
