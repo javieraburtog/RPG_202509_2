@@ -6,7 +6,7 @@
      D No_Documento    s              7  0
      D Estado          s              2a
      D*---------------
-     D* Definicion de Parametros
+     D* Definicion de Parametros , sssssssssss
      D*---------------
      DINV721           PR                  EXTPGM('INV721')
      D Cod_Compania                   2a
